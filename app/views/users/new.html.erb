@@ -1,6 +1,7 @@
 <div class="row">
   <h3>User create</h3>
   <form class="form-horizontal" action="/users" method="post">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
     <div class="form-group">
       <label for="name" class="col-sm-2 control-label">Contact Name:</label>
       <div class="col-sm-10">
@@ -28,7 +29,7 @@
     <div class="form-group">
       <label for="address" class="col-sm-2 control-label">Address</label>
       <div class="col-sm-10">
-      <input type="text" name="user[address]" id="address" class="form-control">
+      <input type="text" name="user[company_address]" id="address" class="form-control">
         </div>
     </div>
     <div class="form-group">
@@ -40,9 +41,9 @@
     <div class="form-group">
       <label for="state" class="col-sm-2 control-label">State</label>
       <div class="col-sm-10">
-      <select type="text" name="user[state]" id="state" class="form-control">
+      <select type="text" name="user[state_id]" id="state" class="form-control">
         <% @states.each do |state| %>
-        <option value="<%=state%>"> <%=state.name%> </option>
+        <option value="<%=state.id%>"> <%=state.name%> </option>
         <% end %>
       </select>
         </div>
@@ -56,16 +57,16 @@
     <div class="form-group">
       <label for="password" class="col-sm-2 control-label">Password:</label>
       <div class="col-sm-10">
-      <input type="text" name="user[password]" id="password" class="form-control">
+      <input type="password" name="user[password]" id="password" class="form-control">
         </div>
     </div>
     <div class="form-group">
       <label for="passwordc" class="col-sm-2 control-label">Password Confirmation:</label>
       <div class="col-sm-10">
-      <input type="text" name="user[password_confirmation]" id="passwordc" class="form-control">
+      <input type="password" name="user[password_confirmation]" id="passwordc" class="form-control">
         </div>
     </div>
-
+    <button type="submit" name="create" class="btn btn-primary">Create user</button>
 
   </form>
 

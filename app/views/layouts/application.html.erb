@@ -10,10 +10,13 @@
 
   <body>
     <div class="container">
+      <p class="bg-success">
+        <%=flash[:notice] %>
+      </p>
       <% if flash[:errors] %>
         <%flash[:errors].each do |error| %>
-        <p>
-          error
+        <p class="bg-danger">
+        <%= error %>
         </p>
         <% end %>
         <%end%>
