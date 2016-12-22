@@ -31,6 +31,8 @@ gem 'rails-footnotes'
 gem 'bootstrap-sass'
 gem 'rename'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'mail_form'
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :test do
