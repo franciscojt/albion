@@ -30,7 +30,7 @@ gem 'hirb'
 gem 'rails-footnotes'
 gem 'bootstrap-sass'
 gem 'rename'
-gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'carrierwave'#, '>= 1.0.0.rc', '< 2.0'
 gem 'mail_form'
 gem 'simple_form'
 # Use Capistrano for deployment

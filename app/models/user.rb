@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   belongs_to :state
   has_secure_password
+  has_many :results
 
   validates :contact_name, :email, :company_address, :city, :zipcode, presence: true
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i

@@ -191,7 +191,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
-  carrierwave (>= 1.0.0.rc, < 2.0)
+  carrierwave
   coffee-rails (~> 4.2)
   hirb
   jbuilder (~> 2.5)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221234558) do
+ActiveRecord::Schema.define(version: 20161222170452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20161221234558) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.string   "attachment"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_results_on_user_id", using: :btree
   end
 
   create_table "states", force: :cascade do |t|
@@ -47,5 +55,6 @@ ActiveRecord::Schema.define(version: 20161221234558) do
     t.index ["state_id"], name: "index_users_on_state_id", using: :btree
   end
 
+  add_foreign_key "results", "users"
   add_foreign_key "users", "states"
 end
