@@ -7,34 +7,26 @@ class ResultsController < ApplicationController
     end
   end
   def create
-    # user = User.find(params_file[:user_id])
-    # file = user.results.new({params_file[:file]})
 
-    # uploader = ResultUploader.new
-    # puts params[:file]
-    # uploader.store!(params_file[:file])
-    # puts uploader.retrieve_from_store!('file.jpeg')
-
-      # if file.store!
-      #   flash[:notice]="File was uploaded successfully"
-      #   redirect_to :back
-      # else
-      #   flash[:errors] = ["File was uploaded unsuccesfully"]
-      # redirect_to :back
-      # end
-      # file = Result.new
-      # file.file=params[:file]
-      # file.save!
       @result = Result.new(params_file)
     
       if @result.save!
-        p @result.file.url
-        redirect_to results_path, notice: "The result #{@result.user_id}"
+        p @result.attachement.url
+		  flash[:notice]= "File has been uploaded successfullys"
+        redirect_to new_user_pat, notice: "The result #{@result.user_id}"
       else
-        p @result
-        render "new"
+        
+        redirect_to new_user_path
       end
   end
+	def download
+		result = Result.find(params[:id])
+		if result.user_id == current_user.id
+			send_file("#{result.attachment}")
+		else
+			flash[:errors]=["File not found please contact your administrator"]
+		end
+	end
   private
     def params_search
       params.require(:user).permit(:email)

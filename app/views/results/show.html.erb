@@ -64,3 +64,10 @@
   </div>
 <% end %>
 </div>
+
+<div class="row">
+	<%= @user.results.inspect %>
+	<% @user.results.each do |result| %>
+		<%= link_to "Download Result", result_download_path(result) %>
+	<% end %>
+</div>
