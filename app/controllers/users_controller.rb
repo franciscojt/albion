@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :require_login, only: [:show, :new]
+	before_action :require_admin, only: [:show, :new]
   def index
   end
   def new

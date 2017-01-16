@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
 
+
 # DISPLAY ROUTES
 root 'displays#index'
-get '/projects' => 'displays#project'
+get '/projects' => 'displays#projects'
 get '/about' => 'displays#about'
-
-resources :sessions, only: [:create, :destroy, :new]
+get '/methods' => 'displays#methods'
+resources :sessions, only: [:create, :destroy, :new, :show]
 resources :quotes, only: [:new,:create]
 resources :users, :results
 post '/results/find'=> 'results#show'
+
+	
+
 
 
 

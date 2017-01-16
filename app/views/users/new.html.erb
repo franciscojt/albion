@@ -70,6 +70,9 @@
 
   </form>
   <h3>Existing Customer</h3>
+  <div class="bg-danger">
+  <%= flash[:error] %>
+  </div>
   <form class="form-horizontal" action="/results/find" method="post">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
     <div class="form-group">
@@ -82,3 +85,4 @@
 </div>
 <button type="submit" name="search" class="btn btn-primary">Search</button>
 </form>
+<%= link_to "Log Out", session_path(current_user), method: :delete %>
