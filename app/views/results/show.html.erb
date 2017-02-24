@@ -61,7 +61,11 @@
 
 <div class="row">
 	<% @user.results.each do |result| %>
-		<%= link_to "Download Result", result.attachment.url%>
+		<% item = result.attachment.url%>
+		<% item.slice! "/public" %>
+		<%= item %>
+		<%= link_to "Download Result", item %>
+		<%=result.attachment.url%>
 		<p><%= result.created_at.strftime("%m/%d/%Y")%> </p>
 	<% end %>
 </div>
