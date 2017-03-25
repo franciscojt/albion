@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Quote</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="contact">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Albion <span></span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="current">
+								<a href="#">Menu</a>
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="case_studies.html">Projects</a></li>
+									<li><a href="methods.html">Methods</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="button special">Login</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<h2>Request A Quote</h2>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 special container 75%">
+
+							<!-- Content -->
+								<div class="content">
+									<form class="form-horizontal" action="/quotes" method="post">
+										<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+										<div class="row 50%">
+											<div class="6u 12u(mobile)">
+												<input type="text" name="quote[name]" placeholder="Contact Name" />
+											</div>
+											<div class="6u 12u(mobile)">
+												<input type="text" name="quote[company]" placeholder="Company" />
+											</div>
+										</div>
+										<div class="row 50%">
+											<div class="6u 12u(mobile)">
+												<input type="text" name="quote[email]" placeholder="Email" />
+											</div>
+											<div class="6u 12u(mobile)">
+												<input type="text" name="quote[phone]" placeholder="Phone Number" />
+											</div>
+										</div>
+										<div class="row 50%">
+											<div class="12u">
+												<textarea name="quote[description]" placeholder="Project Description:" rows="7"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<ul class="buttons">
+													<li><input type="submit" class="special" value="Submit Quote" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+							</div>
+						</section>
+				</article>
+		</div>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
